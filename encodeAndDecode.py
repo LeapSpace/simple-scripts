@@ -4,7 +4,12 @@ import sys
 from itertools import *
 reload(sys)
 sys.setdefaultencoding("utf-8")
-def f(keys, text):
+
+'''
+encode and decode strings which ascii value between 0~255
+'''
+
+def encode(keys, text):
 	bytes = [ord(c) for c in text]
 	result_str = ""
 	for i in range(0, len(bytes), 3):
@@ -19,7 +24,7 @@ def f(keys, text):
 		result_str += hex(temp)[2:]
 	return result_str
 
-def d(keys,text):
+def decode(keys,text):
 	gs=[]
 	for i in xrange(0,len(text),6):
 		tmp=''
